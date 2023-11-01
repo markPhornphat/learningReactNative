@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar"; //React Native --> Not have HTML --> Use View instead to group the elements
 import { useState } from "react";
 import {
+  Dimensions,
   StyleSheet,
   Text,
   View,
@@ -13,7 +14,6 @@ import {
   Button,
   Pressable,
   Platform,
-  StatusBar,
 } from "react-native"; //View -> div , text --> to display text on screen |
 //SafeAreaView --> Make some padding-top to make rext readable on iPhone (Work on IOS)
 
@@ -22,6 +22,8 @@ export default function App() {
   let [count, functionCount] = useState(0);
   const handlePressCount = () => functionCount((count = count + 1));
   const handlePressCountDown = () => functionCount(count--);
+  //console.log(Dimensions.get("screen")); //To see the screen size detail
+
   return (
     //Can define style as ARRAY!
     <SafeAreaView style={[styles.container, containerStyle]}>
@@ -40,7 +42,7 @@ export default function App() {
         />
       </TouchableHighlight>
       <Button
-        color="Black"
+        color="black"
         title="Click Me!"
         onPress={
           () =>
@@ -60,6 +62,11 @@ export default function App() {
         </Pressable>
       </View>
       <Text style={styles.text}>{count}</Text>
+      <View
+        style={{
+          backgroundColor: "dodgerblue",
+        }}
+      ></View>
     </SafeAreaView>
   );
 }
@@ -74,7 +81,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     justifyContent: "center",
     alignItems: "center",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0, //To check --> IF andriod padding-top = 20
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0, //To check --> IF andriod padding-top = current height of the top bar
   },
   button: {
     backgroundColor: "black",
