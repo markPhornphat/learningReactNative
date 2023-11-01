@@ -11,14 +11,15 @@ import {
 const WelcomeScreen = () => {
   return (
     <ImageBackground
-      source={require("C:/Users/Mark/learningReactNative/assets/background.jpg")}
-      style={styles.image}
+      source={require("../assets/background.jpg")}
+      style={styles.imageBack}
     >
       <View style={styles.topBar}>
         <Image
-          source={require("C:/Users/Mark/learningReactNative/assets/logo-red.png")}
+          source={require("../assets/logo-red.png")}
           style={styles.image}
         />
+        <Text> Sell What You Don't Need </Text>
       </View>
       <View style={styles.bottomBar}>
         <Pressable style={[styles.button, { backgroundColor: "#fc5c65" }]}>
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   topBar: {
-    paddingTop: 10,
+    top: 100,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -48,7 +49,13 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 100,
   },
-  image: {},
+  imageBack: {
+    flex: 1,
+  },
+  image: {
+    width: 100,
+    height: 100,
+  },
   button: {
     flex: 1,
     flexDirection: "row",
