@@ -18,8 +18,9 @@ import {
 } from "react-native"; //View -> div , text --> to display text on screen |
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
+import { AddAssignmentButton } from "./app/screens/AddAssignmentButton";
 //SafeAreaView --> Make some padding-top to make rext readable on iPhone (Work on IOS)
 
 export default function App() {
-  return <LearnFromYouTube />;
+  return <AddAssignmentButton />;
 }
